@@ -1,0 +1,105 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<body background="https://i.imgtg.com/2022/09/30/mvmjg.jpg">
+<script type="text/javascript">
+  var has_been_select=new Array();
+  for(var i=1;i<=45;i++){
+    has_been_select[i]=0;
+  }
+  has_been_select[0]=1;
+  has_been_select[33]=1;
+  has_been_select[36]=1;
+</script>
+<script type="text/javascript">
+   function getrandomnumber(){
+       const min=1;
+       const max=45;
+       var a=0;
+       var check=0;
+       while(has_been_select[a]==1||a==33||a==36||a==19||a==0){
+         a=Math.floor(Math.random()*(max-min+1))+min;
+         check++;
+         if(check>=50){
+          alert("警告：所有人都被抽中过，需要点击重置按钮！");
+          break;
+         }
+       }
+        if(check<50){
+          document.getElementById("mynumber").value=a;
+          switch(a){
+            case 1:document.getElementById("myname").value="包媛青";break;
+            case 2:document.getElementById("myname").value="陈吉纯";break;
+            case 3:document.getElementById("myname").value="陈子越";break;
+            case 4:document.getElementById("myname").value="崔伟豪";break;
+            case 5:document.getElementById("myname").value="丁旭珍";break;
+            case 6:document.getElementById("myname").value="傅汉男";break;
+            case 7:document.getElementById("myname").value="高原";break;
+            case 8:document.getElementById("myname").value="龚旭";break;
+            case 9:document.getElementById("myname").value="贡献";break;
+            case 10:document.getElementById("myname").value="郭翔宇";break;
+            case 11:document.getElementById("myname").value="黄晨浩";break;
+            case 12:document.getElementById("myname").value="黄文佳";break;
+            case 13:document.getElementById("myname").value="蒋承意";break;
+            case 14:document.getElementById("myname").value="康延涛";break;
+            case 15:document.getElementById("myname").value="李佳浩";break;
+            case 16:document.getElementById("myname").value="李家晨";break;
+            case 17:document.getElementById("myname").value="李书宸";break;
+            case 18:document.getElementById("myname").value="李涛";break;
+            case 19:document.getElementById("myname").value="李雨杰";break;
+            case 20:document.getElementById("myname").value="郦俊泽";break;
+            case 21:document.getElementById("myname").value="梁灿阳";break;
+            case 22:document.getElementById("myname").value="刘加乐";break;
+            case 23:document.getElementById("myname").value="刘世一";break;
+            case 24:document.getElementById("myname").value="刘鑫玲";break;
+            case 25:document.getElementById("myname").value="鲁淳";break;
+            case 26:document.getElementById("myname").value="陆俊豪";break;
+            case 27:document.getElementById("myname").value="吕雪凤";break;
+            case 28:document.getElementById("myname").value="苏悠然";break;
+            case 29:document.getElementById("myname").value="滕德涛";break;
+            case 30:document.getElementById("myname").value="王宇辰";break;
+            case 31:document.getElementById("myname").value="王芝微";break;
+            case 32:document.getElementById("myname").value="魏源";break;
+            case 33:document.getElementById("myname").value="吴佳昊";break;
+            case 34:document.getElementById("myname").value="杨诗妍";break;
+            case 35:document.getElementById("myname").value="俞嘉";break;
+            case 36:document.getElementById("myname").value="喻文凯";break;
+            case 37:document.getElementById("myname").value="张家硕";break;
+            case 38:document.getElementById("myname").value="张越";break;
+            case 39:document.getElementById("myname").value="张志涛";break;
+            case 40:document.getElementById("myname").value="赵博文";break;
+            case 41:document.getElementById("myname").value="赵仕斌";break;
+            case 42:document.getElementById("myname").value="赵雨潇";break;
+            case 43:document.getElementById("myname").value="周昊";break;
+            case 44:document.getElementById("myname").value="周欣楠";break;
+            case 45:document.getElementById("myname").value="朱家龙";break;
+            default:break;
+          }
+          has_been_select[a]=1;
+        }
+
+   }
+</script>
+<script type="text/javascript">
+  function reset(){
+    for(var i=1;i<=45;i++){
+      has_been_select[i]=0;
+    }
+    has_been_select[0]=1;
+    has_been_select[33]=1;
+    has_been_select[36]=1;
+    //alert("重置成功!");
+    document.getElementById("mynumber").value="重置成功";
+    document.getElementById("myname").value="重置成功";
+  }
+
+</script>
+<form>
+  抽中的人的号码：<input id="mynumber" style="width:200px;height:50px" type="text" name="mynumber"><br>
+  抽中的人的姓名：<input id="myname" style="width:200px;height:50px" type="text"  name="myname"><br><br>
+</form>
+<input type="button" style="width:300px;height:100px;margin-left:600px;margin-top:100px" onclick="getrandomnumber()" id="getrandomnumber" value="摇号" />
+<input type="button" style="width:150px;height:50px;margin-left:600px;margin-top:200px" onclick="reset()" id="reset" value="重置" />
+</body>
+</head>
+</html>
